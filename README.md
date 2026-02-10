@@ -34,21 +34,13 @@ Directories for `config.json` ([**found here**](https://github.com/devPoland/pol
 ```json
 {
     "showUsername": true,
-
     "showProfit": true,
-
     "showBestPull": true,
-
     "showInventoryValue": true,
-
     "showCasesOpened": true,
-
     "showInventoryButton": true,
-
     "alwaysOnTop": false,
-
     "username": "",
-
     "appid": ""
 }
 ```
