@@ -1,5 +1,6 @@
 {
     "name": "poland_bot_rpc",
+    "productName": "poland_bot_rpc",
     "version": "1.0.0",
     "description": "Discord Rich Presence for Poland_BOT",
     "main": "main.js",
@@ -10,6 +11,7 @@
         "build:linux": "electron-builder --linux --publish never"
     },
     "build": {
+        "icon": "icon.png",
         "win": {
             "target": "portable"
         },

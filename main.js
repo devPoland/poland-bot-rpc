@@ -1,4 +1,11 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
+const {
+    app,
+    BrowserWindow,
+    ipcMain,
+    Tray,
+    Menu,
+    Notification,
+} = require("electron");
 const DiscordRPC = require("discord-rpc");
 const axios = require("axios");
 const fs = require("fs");
@@ -152,6 +159,7 @@ function createWindow() {
         height: 650,
         minWidth: 400,
         minHeight: 500,
+        icon: path.join(__dirname, "icon.png"),
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -162,6 +170,45 @@ function createWindow() {
     });
 
     mainWindow.loadFile("./interface/index.html");
+
+    mainWindow.on("close", (event) => {
+        if (!app.isQuitting) {
+            event.preventDefault();
+            mainWindow.hide();
+
+            new Notification({
+                title: "Poland_BOT RPC",
+                body: "App closed to tray",
+                icon: path.join(__dirname, "icon.png"),
+            }).show();
+        }
+    });
+}
+
+function createTray() {
+    tray = new Tray(path.join(__dirname, "icon.png"));
+
+    const contextMenu = Menu.buildFromTemplate([
+        {
+            label: "Show App",
+            click: () => {
+                mainWindow.show();
+            },
+        },
+        {
+            label: "Quit",
+            click: () => {
+                app.isQuitting = true;
+                app.quit();
+            },
+        },
+    ]);
+
+    tray.setToolTip("Poland_BOT RPC");
+    tray.setContextMenu(contextMenu);
+    tray.on("double-click", () => {
+        mainWindow.show();
+    });
 }
 
 async function initDiscordRPC() {
@@ -294,5 +341,6 @@ ipcMain.on("window-close", () => {
 app.whenReady().then(async () => {
     await fetchSkinPrices();
     createWindow();
+    createTray();
 });
 app.on("window-all-closed", () => app.quit());
