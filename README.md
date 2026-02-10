@@ -11,7 +11,7 @@
 
 ### What is this?
 
-A small project for [**Poland_BOT**](https://devpoland.xyz/polandbot/), which uses the open API in order to display your stats.
+A small project for [**Poland_BOT**](https://devpoland.xyz/polandbot/), which uses the open API in order to display your stats using [**Discord RPC**](https://www.npmjs.com/package/discord-rpc).
 
 Calls Made:
 
