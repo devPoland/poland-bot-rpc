@@ -38,6 +38,8 @@ let lastApiCall = 0;
 const API_COOLDOWN = 5000;
 const RPC_COOLDOWN = 15000;
 
+let startTimestamp = Date.now();
+
 async function fetchSkinPrices() {
     try {
         const response = await axios.get(
@@ -277,6 +279,9 @@ async function updatePresence() {
                     large_text: settings.showUsername
                         ? currentUsername
                         : "Gambler",
+                },
+                timestamps: {
+                    start: startTimestamp,
                 },
                 ...(settings.showInventoryButton && {
                     buttons: [
