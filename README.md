@@ -47,7 +47,7 @@ Directories for `config.json` ([**found here**](https://github.com/devPoland/pol
 
 ## Building / Running
 
-    There are 2 things you can do:
+There are 2 things you can do:
 
 1. Directly run
     - Clone the repo `git clone https://github.com/devPoland/poland-bot-rpc`
