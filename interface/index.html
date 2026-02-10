@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Poland_BOT RP</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="code.js" defer></script>
+    </head>
+    <body>
+        <div class="titlebar">
+            <div class="titlebar-drag">Poland_BOT Rich Presence</div>
+            <div class="titlebar-buttons">
+                <button class="titlebar-btn minimize">_</button>
+                <button class="titlebar-btn close">X</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="status-box">
+                <div class="status-indicator" id="statusIndicator"></div>
+                <span id="statusText">Not connected</span>
+            </div>
+
+            <div class="section-box">
+                <h2>Configuration</h2>
+                <div class="input-wrapper">
+                    <label>Twitch Username</label>
+                    <input
+                        type="text"
+                        style="margin-bottom: 10px"
+                        id="username"
+                        placeholder="devpoland"
+                    />
+                    <label>App ID</label>
+                    <input
+                        type="text"
+                        id="appid"
+                        placeholder="1234567890123456789"
+                    />
+                </div>
+                <button class="btn-primary" id="startBtn">
+                    Start Rich Presence
+                </button>
+                <button class="btn-danger" id="stopBtn" style="display: none">
+                    Stop Rich Presence
+                </button>
+            </div>
+
+            <div class="section-box">
+                <h2>Display Settings</h2>
+                <div class="checkbox-list">
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="showUsername" checked />
+                        <span>Show Username</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="showProfit" checked />
+                        <span>Show Profit</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="showBestPull" checked />
+                        <span>Show Best Pull</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input
+                            type="checkbox"
+                            id="showInventoryValue"
+                            checked
+                        />
+                        <span>Show Inventory Value</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="showCasesOpened" checked />
+                        <span>Show Cases Opened</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input
+                            type="checkbox"
+                            id="showInventoryButton"
+                            checked
+                        />
+                        <span>Show Inventory Button</span>
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" id="alwaysOnTop" />
+                        <span>Always On Top</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="section-box" id="dataBox" style="display: none">
+                <h2>Live Data</h2>
+                <div class="data-grid">
+                    <div class="data-item">
+                        <span class="data-label">Profit</span>
+                        <span class="data-value" id="profitValue">$0.00</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Cases</span>
+                        <span class="data-value" id="casesValue">0</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Inventory</span>
+                        <span class="data-value" id="inventoryValue"
+                            >$0.00</span
+                        >
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Best Item</span>
+                        <span class="data-value bestitem" id="bestItemValue"
+                            >-</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

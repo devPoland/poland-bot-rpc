@@ -1,0 +1,30 @@
+{
+    "name": "poland_bot_rpc",
+    "version": "1.0.0",
+    "description": "Discord Rich Presence for Poland_BOT",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder --win --x64"
+    },
+    "build": {
+        "win": {
+            "target": "portable"
+        },
+        "linux": {
+            "target": "AppImage"
+        }
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "dependencies": {
+        "axios": "^1.13.5",
+        "discord-rpc": "^4.0.1"
+    },
+    "devDependencies": {
+        "electron": "^40.2.1",
+        "electron-builder": "^26.0.12"
+    }
+}

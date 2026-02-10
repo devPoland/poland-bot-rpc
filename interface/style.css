@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(18, 18, 18);
+    color: rgb(222, 222, 222);
+    overflow: hidden;
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(40, 40, 50, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(141, 181, 230);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(120, 160, 210);
+}
+
+.titlebar {
+    height: 32px;
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(141, 181, 230, 0.2);
+    -webkit-app-region: drag;
+}
+
+.titlebar-drag {
+    flex: 1;
+    padding-left: 12px;
+    font-size: 0.85rem;
+    color: rgb(141, 181, 230);
+    font-weight: bold;
+}
+
+.titlebar-buttons {
+    display: flex;
+    -webkit-app-region: no-drag;
+}
+
+.titlebar-btn {
+    width: 46px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: rgb(200, 200, 200);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titlebar-btn:hover {
+    background-color: rgba(141, 181, 230, 0.2);
+}
+
+.titlebar-btn.close:hover {
+    background-color: rgb(255, 79, 79);
+    color: white;
+}
+
+.content {
+    height: calc(100vh - 32px);
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.status-box {
+    background-color: rgb(28, 28, 28);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 1px rgba(200, 200, 200, 0.25) solid;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(170, 170, 170);
+    flex-shrink: 0;
+}
+
+.status-indicator.connected {
+    background-color: rgb(74, 222, 128);
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+}
+
+.status-indicator.disconnected {
+    background-color: rgb(251, 191, 36);
+}
+
+.status-indicator.error {
+    background-color: rgb(248, 113, 113);
+    box-shadow: 0 0 8px rgba(248, 113, 113, 0.6);
+}
+
+#statusText {
+    font-size: 0.95rem;
+    color: rgb(200, 200, 200);
+}
+
+.section-box {
+    background-color: rgb(28, 28, 28);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px rgba(200, 200, 200, 0.25) solid;
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgb(141, 181, 230);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.input-wrapper {
+    margin-bottom: 15px;
+}
+
+.input-wrapper label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(141, 181, 230);
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgb(18, 18, 18);
+    border: 1px solid rgba(200, 200, 200, 0.3);
+    border-radius: 8px;
+    color: rgb(222, 222, 222);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: rgb(141, 181, 230);
+    box-shadow: 0 0 10px rgba(141, 181, 230, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: rgba(141, 181, 230, 0.4);
+    border: 1px solid rgb(127, 176, 236);
+    color: white;
+}
+
+.btn-danger {
+    background: rgba(248, 113, 113, 0.4);
+    border: 1px solid rgb(231, 94, 94);
+    color: white;
+    margin-top: 10px;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.checkbox-item:hover {
+    background-color: rgba(141, 181, 230, 0.1);
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: rgb(141, 181, 230);
+}
+
+.checkbox-item span {
+    font-size: 1rem;
+    color: rgb(200, 200, 200);
+}
+
+.data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.data-item {
+    background-color: rgba(18, 18, 18, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(200, 200, 200, 0.2);
+}
+
+.data-label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgb(141, 181, 230);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.data-value {
+    display: block;
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.data-value.bestitem {
+    font-size: 0.9rem;
+}
+
+.data-value.positive {
+    color: rgb(74, 222, 128);
+}
+
+.data-value.negative {
+    color: rgb(248, 113, 113);
+}
