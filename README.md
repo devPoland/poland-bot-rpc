@@ -1,15 +1,12 @@
 <h1 align="center">Custom Rich Presence for Poland_BOT</h1>
 
 > [!IMPORTANT]
-
 > To get your "App ID" go to the [**Discord Developer Portal**](https://discord.com/developers/applications), press **New Application** and on **General Information** you will see **Application ID**.
 
 > [!IMPORTANT]
-
 > To get an Icon for the application, head over to (on the same application you created) **Rich Presence** -> **Art Assets** -> **Rich Presence Assets** and name it just `icon` ([**can be changed, but requires rebuilding**](https://github.com/devPoland/poland-bot-rpc/blob/92ed131cbe2f82df254dd61c08ea5e7daa4de391/main.js#L229))
 
 > [!WARNING]
-
 > You cannot see the "Check out my Inventory" button (**showInventoryButton setting**), but others can and will (if the feature is enabled)
 
 ### What is this?
